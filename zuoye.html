@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery/jquery-1.10.1.min.js"></script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		div{
+			width: 500px;
+			height: 500px;
+			/* border: 1px solid #000; */
+			position: absolute;
+			top: 10px;
+			left: 45%;
+		}
+		input{
+			height: 20px;
+		}
+		ul{
+			display: none;
+		}
+		ul li{
+			list-style: none;
+			width: 150px;
+			height: 30px;
+			border: 1px solid #000;
+			margin-top: 10px;
+			text-align: center;
+			line-height: 30px;
+			
+		}
+		
+	</style>
+	<script>
+			$(function(){
+				$("li").mouseover(function(){
+					$(this).css("backgroundColor","skyblue");
+				});
+				$("li").mouseout(function(){
+					$(this).css("backgroundColor","white");
+				})
+
+				$("#cc").click(function(){
+					$("ul").css("display","block");
+				})
+				$("li").click(function(){
+					var a=$(this).html();
+					$("#cc").val(a);
+					$("ul").css("display","none");
+				})
+			})
+			
+	</script>
+</head>
+<body>
+	<div>
+		<input type="text" id="cc">
+		<ul>
+			<li>安徽</li>
+			<li>广东</li>
+			<li>江苏</li>
+			<li>北京</li>
+			<li>上海</li>
+		</ul>
+	</div>
+	
+</body>
+</html>
